@@ -4,6 +4,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
+	"github.com/apex/log"
 	"github.com/brocaar/chirpstack-gateway-bridge/internal/config"
 	"github.com/brocaar/chirpstack-gateway-bridge/internal/config/sx1301v1"
 	"github.com/brocaar/lorawan"
@@ -23,6 +24,7 @@ var regionNameMapping = map[band.Name]string{
 	band.KR920: "KR920",
 	band.US915: "US902",
 	band.RU864: "RU864",
+	band.KZ865: "KZ865",
 }
 
 // RouterConfig implements the router-config message.
@@ -83,6 +85,8 @@ type SX1301ConfChanMultiSF struct {
 // GetRouterConfig returns the router-config message.
 func GetRouterConfig(region band.Name, netIDs []lorawan.NetID, joinEUIs [][2]lorawan.EUI64, freqMin, freqMax uint32, concentrators []config.BasicStationConcentrator) (RouterConfig, error) {
 	concentratorCount := len(concentrators)
+
+	log.Info("GetRouterConfig : " + string(region));
 
 	c := RouterConfig{
 		MessageType: RouterConfigMessage,

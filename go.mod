@@ -2,6 +2,8 @@ module github.com/brocaar/chirpstack-gateway-bridge
 
 go 1.17
 
+replace github.com/brocaar/lorawan => ./lorawan
+
 require (
 	github.com/brocaar/lorawan v0.0.0-20220207095711-d675789e16ab
 	github.com/chirpstack/chirpstack/api/go/v4 v4.0.0
@@ -33,6 +35,8 @@ require (
 	github.com/caarlos0/ctrlc v1.0.0 // indirect
 	github.com/campoy/unique v0.0.0-20180121183637-88950e537e7e // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/coreos/go-log v0.0.0-20180308165134-b22fd89e1882 // indirect
+	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
@@ -47,6 +51,7 @@ require (
 	github.com/jacobsa/crypto v0.0.0-20190317225127-9f44e2d11115 // indirect
 	github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af // indirect
 	github.com/kamilsk/retry/v4 v4.0.0 // indirect
+	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect

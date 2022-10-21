@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/brocaar/chirpstack-gateway-bridge/cmd/chirpstack-gateway-bridge/cmd"
@@ -40,5 +41,9 @@ func init() {
 var version string // set by the compiler
 
 func main() {
+	log.SetLevel(log.TraceLevel)
+	log.Info("-----main : ")
+	fmt.Println("-----main : --------")
+
 	cmd.Execute(version)
 }
